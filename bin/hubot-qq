@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+'use strict';
+
+const spawn = require('child_process').spawn;
+const path = require('path');
+const env = require('../env');
+
+const child = spawn(path.join(__dirname, 'hubot'), ['-a', 'qq'], {
+    cwd: path.join(__dirname, '../'),
+    stdio: 'inherit',
+    env: env.adapters.qq
+});
